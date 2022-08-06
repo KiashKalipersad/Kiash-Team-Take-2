@@ -389,7 +389,11 @@ plot.NDVI(dat)</code></pre>
 satellite saturates with time since fire. Why do you think it saturates
 rather than increasing linearly with time?</p>
 <blockquote>
-<p><em>Answer 1:</em> <br></p>
+<p><em>Answer 1:</em> NDVI measures the density of the green patch of
+land. As vegetation in fynbos gets larger and thicker, the satelites can
+only measure the space in between and not how large/tall. So if before
+maturity the space between plants fills out, the satelite will saturate.
+<br></p>
 </blockquote>
 </div>
 <div id="fit-models-using-non-linear-least-squares-nls" class="section level3">
@@ -491,11 +495,13 @@ p-value.</p>
 <p><br></p>
 <p>Q3: Which model is better?</p>
 <blockquote>
-<p><em>Answer 3:</em> Q4: How many degrees of freedom are there in this
-ANOVA and why (i.e. what are they)?</p>
+<p><em>Answer 3:</em> Model 2 is better, because it significant and has
+a p-value&lt;0.05.</p>
 </blockquote>
+<p>Q4: How many degrees of freedom are there in this ANOVA and why
+(i.e. what are they)?</p>
 <blockquote>
-<p><em>Answer 4:</em> <br></p>
+<p><em>Answer 4:</em> 2. Its from the groups been tested. <br></p>
 </blockquote>
 </div>
 <div id="fit-models-using-maximum-likelihood-estimation-mle" class="section level3">
@@ -597,7 +603,8 @@ significantly different at an <span class="math inline">\(\alpha\)</span> of <sp
 <p><br></p>
 <p>Q5: Is there a preferred model and if so, which one?</p>
 <blockquote>
-<p><em>Answer 5:</em> <br></p>
+<p><em>Answer 5:</em> fit_negexpS is preffered, because it has the lower
+AIC. <br></p>
 </blockquote>
 <p>The nice thing about AIC is that the models you compare do not have
 to be nested like they do for ANOVA, as long as the data are the same.
@@ -614,7 +621,9 @@ MLE models…</p>
 the AIC of the MLE models? Hint: type <code>?AIC</code> into the R
 console and do some reading.</p>
 <blockquote>
-<p><em>Answer 6:</em> <br></p>
+<p><em>Answer 6:</em> Models not fitted to the same data, changes their
+response. AIC cannot be computed by models fitted with maximam
+likelihood. <br></p>
 </blockquote>
 </div>
 

@@ -30,6 +30,7 @@ plot.NDVI(dat)
 Q1: This plot suggests that Fynbos greenness (NDVI) as observed from satellite saturates with time since fire. Why do you think it saturates rather than increasing linearly with time?
 
 >*Answer 1:*
+NDVI measures the density of the green patch of land. As vegetation in fynbos gets larger and thicker, the satelites can only measure the space in between and not how large/tall. So if before maturity the space between plants fills out, the satelite will saturate.
 <br>
 
 ### 2. Fit models using Non-linear Least Squares (NLS)
@@ -106,9 +107,12 @@ anova(fit_negexp, fit_negexpS)
 Q3: Which model is better?
 
 >*Answer 3:*
+Model 2 is better, because it significant and has a p-value<0.05.
+
 Q4: How many degrees of freedom are there in this ANOVA and why (i.e. what are they)?
 
 >*Answer 4:*
+2. Its from the groups been tested.
 <br>
 
 ### 4. Fit models using Maximum Likelihood Estimation (MLE)
@@ -191,6 +195,7 @@ AIC_simple - AIC_full
 Q5: Is there a preferred model and if so, which one?
 
 >*Answer 5:*
+fit_negexpS is preffered, because it has the lower AIC.
 <br>
 
 The nice thing about AIC is that the models you compare do not have to be nested like they do for ANOVA, as long as the data are the same. There are a few other constraints however... 
@@ -208,4 +213,5 @@ You'll notice that these are completely different to the AICs for the MLE models
 Q6: Why is it not okay to compare the AIC of these NLS models with the AIC of the MLE models? Hint: type `?AIC` into the R console and do some reading.
 
 >*Answer 6:*
+Models not fitted to the same data, changes their response. AIC cannot be computed by models fitted with maximam likelihood.
 <br>
